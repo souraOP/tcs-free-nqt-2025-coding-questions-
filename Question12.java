@@ -12,7 +12,7 @@ Explanation: After rotating the array 2 times to the right, the result is [4, 5,
 */
 
 import java.util.*;
-public class Questions12 {
+public class Question12 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int n = sc.nextInt();
