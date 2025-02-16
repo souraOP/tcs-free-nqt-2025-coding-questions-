@@ -10,7 +10,7 @@ Explanation: The smallest element is 1, and the second smallest is 10.
 
 */
 
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class Question25 {
   public static void main(String[] args) {

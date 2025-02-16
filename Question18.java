@@ -8,7 +8,7 @@ Output: [0, 0, 1, 1, 2, 2]
 Explanation: The array is sorted in ascending order of risk levels
  */
 
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class Question18 {
   public static void main(String[] args) {

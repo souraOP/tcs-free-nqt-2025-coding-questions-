@@ -2,19 +2,19 @@ public class PrimeNumberOrNot {
   public static void main(String[] args) {
     int n = 237;
 
-    // if(x(n)){
-    //   System.out.println(n+ " is a prime number");
-    // } else {
-    //   System.out.println("Not a prime number");
-    // }
-    if(recursionPrime(n, 2)){
+    if(x(n)){
       System.out.println(n+ " is a prime number");
     } else {
       System.out.println("Not a prime number");
     }
+    // if(recursionPrime(n, 2)){
+    //   System.out.println(n+ " is a prime number");
+    // } else {
+    //   System.out.println("Not a prime number");
+    // }
   }
 
-  private static boolean x(int n){
+  private static boolean x (int n){
     if(n == 1 || n == 0){
       return true;
     }
@@ -27,18 +27,18 @@ public class PrimeNumberOrNot {
   }
 
   // recursion approach
-  private static boolean recursionPrime(int n, int div){
-    if(n <= 1){
-      return false;
-    }
+  // private static boolean recursionPrime(int n, int div){
+  //   if(n <= 1){
+  //     return false;
+  //   }
 
-    if(div > Math.sqrt(n)){
-      return true;
-    }
+  //   if(div > Math.sqrt(n)){
+  //     return true;
+  //   }
 
-    if(div % n == 0){
-      return false;
-    }
-    return recursionPrime(n, div+1);
-  }
+  //   if(div % n == 0){
+  //     return false;
+  //   }
+  //   return recursionPrime(n, div+1);
+  // }
 }

@@ -5,6 +5,7 @@ public class CountSundays {
     Scanner sc = new Scanner(System.in);
     String str = sc.nextLine();
     int n = sc.nextInt();
+    sc.close();
     String[] arr = {"mon", "tue", "wed", "thu", "fri", "sat", "sun"};
     int i = 0;
     for(i = 0; i < arr.length; i++){
@@ -19,7 +20,7 @@ public class CountSundays {
       res += n/7;
     }
     System.out.println(res);
-    sc.close();
+    
 
   }
 }
