@@ -42,7 +42,7 @@ public class AliceDigits {
       }
       System.out.println(solve(n, arr));
     }
-
+    sc.close();
   }
 
   static int solve(int n, int[] arr ){
