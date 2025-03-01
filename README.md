@@ -12,7 +12,7 @@ repo consists of most asked tcs nqt coding questions that might come on 2025 fre
 - ### 1. Size is given:
   - Input format is given -
     - N = 4
-    - arr = [5,4,3,2]
+    - arr = [5,4,3,2] or arr = 5,4,3,2
 
 - ### 2. No Size or array input is given to you
   - Example: 5 4 6 2 1
@@ -22,6 +22,8 @@ repo consists of most asked tcs nqt coding questions that might come on 2025 fre
 
 <br>
 <h4 style="text-align: center;">When size is given (Best Case)</h4>
+
+#### C++ Code
 
 ```cpp
 // C++
@@ -45,8 +47,36 @@ void inputWithSize(){
 }
 ```
 
+#### Java Code
+
+```java
+// Example input: 
+// 4
+// 1 2 3 4
+
+import java.util.Scanner;
+
+public static void inputWithSize(){
+  int n = sc.nextInt();
+  int[] arr = new int[n];
+
+  for(int i = 0; i < n; i++){
+    arr[i] = sc.nextInt();
+  }
+
+  System.out.println("Array with given size: ");
+  for(int i : arr){
+    System.out.print(i + " ");
+  }
+  System.out.println();
+}
+
+```
+
 <br>
 <h4 style="text-align: center;">When no size or description is given (input as string)</h4>
+
+#### C++ Code
 
 ```cpp
 //C++
@@ -73,9 +103,40 @@ void inputAsString(){
 }
 ```
 
+#### Java Code
+
+```java
+// Example: 1 2 3 4 5
+
+
+import java.util.*;
+public static void inputAsString(Scanner sc){
+  String line = sc.nextLine();
+  String[] tokens = line.split("\\s+");
+
+  List<Integer> arr = new ArrayList<>();
+  for(String token : tokens){
+    try{
+      arr.add(Integer.parseInt(token));
+    } catch (NumberFormatException e){
+      // ignore inputs that are not numbers
+      System.out.println(e);
+    }
+  }
+
+  System.out.println("Array (with string input): ");
+  for(int i : arr){
+    System.out.print(i + " ");
+  }
+  System.out.println();
+}
+
+```
+
 <br>
 <h4 style="text-align: center;">When datatypes are known</h4>
 
+#### C++ Code
 ```cpp
 //C++
 // Example: 1 2 3 4 5
@@ -101,8 +162,33 @@ void inputWithoutSize(){
 }
 ```
 
+#### Java Code
+
+```java
+// Example: 1 2 3 4 5  -> are in integer order (Best case)
+// 1 2 3 4 5
+
+import java.util.*;
+
+public static void inputWithoutSize(Scanner sc) {
+  ArrayList<Integer> arr = new ArrayList<>();
+  while(sc.hasNextInt()){
+    arr.add(sc.nextInt());
+  }
+
+  System.out.print("Array with given size: ");
+  for(int i : arr){
+    System.out.print(i + " ");
+  }
+  System.out.println();
+}
+
+```
+
 <br>
 <h4 style="text-align: center;">MOST USED INPUT FORMAT (Worst Case)</h4>
+
+#### C++ Code
 
 ```cpp
 //C++
@@ -142,6 +228,39 @@ void mostUsedInputFormat(){
   }
   cout << endl;
 }
+```
+#### Java Code
+
+```java
+import java.util.*;
+
+// Constraint : 1 <= arr[i] <= 9  (Single digit input)
+public static void mostUsedInputFormat(Scanner sc){
+  String line = sc.nextLine();
+  StringBuilder sb = new StringBuilder();
+  ArrayList<Integer> arr = new ArrayList<>();
+
+  for(char ch : line.toCharArray()){
+    if(Character.isDigit(ch)){
+      sb.append(ch);
+    } else if (sb.length() > 0) {
+      arr.add(Integer.parseInt(sb.toString()));
+      sb.setLength(0);
+    }
+  }
+
+  // remaining
+  if(sb.length() >0) {
+    arr.add(Integer.parseInt(sb.toString()));
+  }
+  System.out.print("Array (extracted number): ");
+  for(int i : arr){
+    System.out.print(i + " ");
+  }
+  System.out.println();
+
+}
+
 ```
 
 <h4 style="text-align: center;">TCS NQT 2024 (3rd Oct) Question (ACCEPTED) &#9989</h4>
